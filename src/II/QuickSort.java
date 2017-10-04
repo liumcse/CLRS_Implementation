@@ -31,7 +31,7 @@ public class QuickSort {
         // in this implementation, we choose the mid point as pivot
         // This is in accordance with CZ2001
         int mid = (p + r)/2;
-        swap(a, p, mid);
+        swap(a, p, mid);  // critical step
         int pivot = a[p];
         int i = p;
         for (int j = p + 1; j <= r; j++) {
