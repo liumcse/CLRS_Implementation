@@ -1,6 +1,7 @@
 package I;
 
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class MergeSort {
     public static void sort(int[] a, int p, int r) {
@@ -35,23 +36,36 @@ public class MergeSort {
         }
     }
 
+//    public static void main(String[] args) {
+//        int length;
+//        Scanner sc = new Scanner(System.in);
+//
+//        /* get length */
+//        System.out.println("Please enter the length of array:");
+//        length = sc.nextInt();
+//        int a[] = new int[length];
+//
+//        /* get array */
+//        System.out.println("Please enter " + length + " numbers:");
+//        for (int i = 0; i < length; i++) a[i] = sc.nextInt();
+//
+//        /* sort */
+//        sort(a, 0, length - 1);
+//
+//        /* print array */
+//        for (int i = 0; i < length; i++) System.out.print(a[i] + " ");
+//    }
+
     public static void main(String[] args) {
-        int length;
-        Scanner sc = new Scanner(System.in);
+        int[] a = new int[100000000];
+        Random rand = new Random();
+        for (int i = 0; i < 100000000; i++) a[i] = rand.nextInt(100000000);
 
-        /* get length */
-        System.out.println("Please enter the length of array:");
-        length = sc.nextInt();
-        int a[] = new int[length];
+        System.out.println("Start sorting");
+        long t1 = System.nanoTime();
+        sort(a, 0, 99999999);
+        long t2 = System.nanoTime();
+        System.out.println("End sorting, time taken: " + (t2 - t1) / 1000000 + "ms");
 
-        /* get array */
-        System.out.println("Please enter " + length + " numbers:");
-        for (int i = 0; i < length; i++) a[i] = sc.nextInt();
-
-        /* sort */
-        sort(a, 0, length - 1);
-
-        /* print array */
-        for (int i = 0; i < length; i++) System.out.print(a[i] + " ");
     }
 }
